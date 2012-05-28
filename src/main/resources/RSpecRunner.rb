@@ -8,7 +8,9 @@ def run(sourceDir, requiredMod, reportFile)
 			@installed_at_exit = true 
 			run(args, $stderr, $stdout)
 		end"""
-	opts = [sourceDir, '-f', 'html', '-o', reportFile]
+
+	opts = [sourceDir, '-c', '-f', 'documentation']
+
 	if requiredMod
 		opts = ['-r'].product(requiredMod.split(',')).flatten + opts
 	end

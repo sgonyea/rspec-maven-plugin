@@ -44,15 +44,13 @@ public final class RspecRunnerMojo extends AbstractRspecMojo {
 
 	private void processResults(boolean result) throws MojoFailureException {
 		if (!result) {
-			String msg = "RSpec tests failed. See '" + reportFile()
-					+ "' for details.";
+			String msg = "RSpec tests failed!";
 			getLog().warn(msg);
 			if (!ignoreFailure) {
 				throw new MojoFailureException(msg);
 			}
 		} else {
-			String msg = "RSpec tests successful. See '" + reportFile()
-					+ "' for details.";
+			String msg = "RSpec tests successful!";
 			getLog().info(msg);
 		}
 	}
