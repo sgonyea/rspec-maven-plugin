@@ -14,5 +14,7 @@ def run(sourceDir, requiredMod, reportFile)
 	if requiredMod
 		opts = ['-r'].product(requiredMod.split(',')).flatten + opts
 	end
-	RSpec::Core::Runner.autorun_with_args(opts)
+
+	failures = RSpec::Core::Runner.autorun_with_args(opts)
+	failures == 0
 end
